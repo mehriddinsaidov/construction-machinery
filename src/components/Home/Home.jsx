@@ -7,6 +7,8 @@ import img2 from '../img/arr-img-2.jpg'
 import img3 from '../img/arr-img-3.png'
 import img4 from '../img/arr-img-4.jpg'
 import { Button } from '@mui/material'
+import './Home.css'
+import { Link } from 'react-router-dom'
 
 function Home() {
     let arr = [
@@ -35,24 +37,24 @@ function Home() {
 
         },
     ]
-    useEffect(()=>{
+    useEffect(() => {
         window.scrollTo(0, 0)
-      },[])
+    }, [])
 
     return (
-        <div className='bg-[#f4f4f4] relative'>
+        <div className='bg-[#f4f4f4]'>
             <video autoPlay muted loop className='min-w-[100%] object-cover absolute h-[70vh]' >
                 <source src="https://792902.selcdn.ru/zcatalog/clients/shantui/uploads/files/cbga2-videoplayback.mp4" type="video/mp4" />
             </video>
 
-                <div className='h-[70vh] bg-[rgba(0,0,0,0.6)] absolute w-[100%]'>   
+            <div className='h-[70vh] bg-[rgba(0,0,0,0.6)] absolute w-[100%]'>
 
-                </div>
+            </div>
             <Container>
                 <div className='mt-[10vh] text-[#FFF] w-[50%] h-[40vh] absolute text-start flex flex-col justify-evenly'>
                     <p className='text-start'><b>ПРОИЗВОДСТВО ТЯЖЕЛОЙ ТЕХНИКИ С 1952 ГОДА</b></p>
                     <h1 className='text-[50px] font-[700] py-[20px]'>Сделаем строительство проще</h1>
-                    <Button variant='contained' color="warning" style={{width:'30%',padding:'15px 0'}}>Смотреть каталог</Button>
+                    <Link to='/Catalog' ><Button variant='contained' color="warning" style={{ width: '30%', padding: '15px 0' }}>Смотреть каталог</Button></Link>
                 </div>
 
                 <div className='h-[70vh]'>
@@ -77,15 +79,17 @@ function Home() {
 
                 <div>
                     <h1 className='text-start text-[36px] font-[700]'>Строительная техника SHANTUI</h1>
-                    <div className='flex justify-between pb-[70px]'>
+                    <div className='flex justify-between pb-[70px] flex-wrap'>
                         {arr.map((elem) => {
                             return (
-                                <div className='w-[24%] flex flex-col my-[20px] justify-between bg-[#FFF]'>
-                                    <div className='py-[20px]'>
-                                        <h1 className='text-[20px] font-[400]'>{elem.name}</h1>
-                                        <p className='p-[10px] text-[15px] font-[600] tracking-[0.3px] opacity-[0.7]'>{elem.info}</p>
-                                    </div>
-                                    <img src={elem.img} alt="" className='w-[100%]' />
+                                <div id="div" className='w-[24%] flex flex-col my-[20px] justify-between bg-[#FFF]'>
+                                    <Link>
+                                        <div className='py-[20px]'>
+                                            <h1 id="h1" className='text-[20px] font-[400]'>{elem.name}</h1>
+                                            <p className='p-[10px] text-[15px] font-[600] tracking-[0.3px] opacity-[0.7]'>{elem.info}</p>
+                                        </div>
+                                        <img src={elem.img} alt="" className='w-[100%]' />
+                                    </Link>
                                 </div>
                             )
                         })}

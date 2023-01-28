@@ -1,0 +1,12 @@
+.h-uslugi{
+    /* display: none; */
+}
+.uslugi:hover + .h-uslugi{
+    display: block;
+}
+.hello2{
+    display: none;
+}
+.hello:hover + .hello2{
+display: block;
+}
