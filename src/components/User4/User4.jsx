@@ -13,6 +13,7 @@ function User4() {
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
+
     let arr = [
         {
             img: img2,
@@ -48,30 +49,37 @@ function User4() {
             volume: '3.39 м3',
         },
     ]
+    
     return (
         <div className='bg-[#f4f4f4]'>
             <Container>
-                <div className='flex justify-between py-[50px]'>
-                    <div className='w-[25%] bg-[#FFF] mt-[70px] h-[42vh] sticky top-[70px]'>
-                        <Link to='/user/1'><p className='hover:bg-[#f4f4f4] m-[5px] p-[5px] flex justify-between'><b>Автогрейдеры</b> <p className='opacity-[0.6]'>6</p></p></Link>
-                        <Link to='/user/2'><p className='hover:bg-[#f4f4f4] m-[5px] p-[5px] flex justify-between'><b>Бульдозеры</b> <p className='opacity-[0.6]'>78</p></p></Link>
-                        <Link to='/user/3'><p className='hover:bg-[#f4f4f4] m-[5px] p-[5px] flex justify-between'><b>Экскаваторы</b> <p className='opacity-[0.6]'>13</p></p></Link>
-                        <Link to='/user/4'><p className='hover:bg-[#f4f4f4] m-[5px] p-[5px] flex justify-between'><b>Компакторы</b> <p className='opacity-[0.6]'>3</p></p></Link>
-                        <Link to='/user/5'><p className='hover:bg-[#f4f4f4] m-[5px] p-[5px] flex justify-between'><b>Трубоукладчики</b> <p className='opacity-[0.6]'>4</p></p></Link>
-                        <Link to='/user/6'><p className='hover:bg-[#f4f4f4] m-[5px] p-[5px] flex justify-between'><b>Дорожные катки</b> <p className='opacity-[0.6]'>45</p></p></Link>
-                        <Link to='/user/7'><p className='hover:bg-[#f4f4f4] m-[5px] p-[5px] flex justify-between'><b>Фронтальные погрузчики</b> <p className='opacity-[0.6]'>28</p></p></Link>
+                <div className='py-[40px] w-[100%] flex justify-between items-center'>
+                    <div className='w-[24%] flex items-center justify-between tablet1:w-[47%]'>
+                        <h1 className='text-[40px] font-[600] text-start w-[94%] tablet1:text-[25px]'>Компакторы </h1>
+                        <p className='w-[5%] opacity-[0.6] text-[22px] pt-[7px] font-[600] tablet1:text-[18px]'>3</p>
                     </div>
-                    <div className='w-[73%]'>
-                        <div id='search' className='bg-[#FFF] w-[25%] h-[7vh] ml-[75%]'>
-                            <input type="text" placeholder='Поиск' className='p-[10px] w-[80%]' />
-                            <SearchIcon style={{ fontSize: '30px', padding: '0 7px', width: '20%', opacity: '0.6' }} />
-                        </div>
+                    <div id='search' className='bg-[#FFF] w-[25%] h-[7vh] tablet1:w-[40%] tablet1:h-[5.6vh]'>
+                        <input type="text" placeholder='Поиск' className='p-[10px] w-[80%]' />
+                        <SearchIcon style={{ fontSize: '30px', padding: '0 7px', width: '20%', opacity: '0.6' }} />
+                    </div>
+                </div>
+                <div className='flex justify-between pb-[50px]'>
+                    <div className='w-[25%] bg-[#FFF] py-[10px] h-[52vh] sticky top-[70px] tablet1:hidden'>
+                        <Link to='/user/1'><p className='hover:bg-[#f4f4f4] opacity-[0.8] m-[5px] px-[10px] py-[7px] flex justify-between'><b className='text-[18px]'>Автогрейдеры</b> <p className='opacity-[0.6]'>6</p></p></Link>
+                        <Link to='/user/2'><p className='hover:bg-[#f4f4f4] opacity-[0.8] m-[5px] px-[10px] py-[7px] flex justify-between'><b className='text-[18px]'>Бульдозеры</b> <p className='opacity-[0.6]'>78</p></p></Link>
+                        <Link to='/user/3'><p className='hover:bg-[#f4f4f4] opacity-[0.8] m-[5px] px-[10px] py-[7px] flex justify-between'><b className='text-[18px]'>Экскаваторы</b> <p className='opacity-[0.6]'>13</p></p></Link>
+                        <Link to='/user/4'><p className='hover:bg-[#f4f4f4] opacity-[0.8] m-[5px] px-[10px] py-[7px] flex justify-between'><b className='text-[18px]'>Компакторы</b> <p className='opacity-[0.6]'>3</p></p></Link>
+                        <Link to='/user/5'><p className='hover:bg-[#f4f4f4] opacity-[0.8] m-[5px] px-[10px] py-[7px] flex justify-between'><b className='text-[18px]'>Трубоукладчики</b> <p className='opacity-[0.6]'>4</p></p></Link>
+                        <Link to='/user/6'><p className='hover:bg-[#f4f4f4] opacity-[0.8] m-[5px] px-[10px] py-[7px] flex justify-between'><b className='text-[18px]'>Дорожные катки</b> <p className='opacity-[0.6]'>45</p></p></Link>
+                        <Link to='/user/7'><p className='hover:bg-[#f4f4f4] opacity-[0.8] m-[5px] px-[10px] py-[7px] flex justify-between'><b className='text-[18px]'>Фронтальные погрузчики</b> <p className='opacity-[0.6]'>28</p></p></Link>
+                    </div>
 
-                        <div className='flex bg-[#FFF] p-[25px] justify-between mt-[23px]'>
-                            <div className='w-[58%] pt-[17px]'>
+                    <div className='w-[73%] tablet1:w-[100%]'>
+                        <div className='flex bg-[#FFF] p-[25px] justify-between tablet1:flex-wrap'>
+                            <div className='w-[58%] pt-[17px] tablet1:w-[100%]'>
                                 <p className='text-start text-[15px]'>Автогрейдеры Shantui оснащены жесткими отвалами для выполнения работ по выравниванию грунта в узких местах. Эти отвалы оснащены плавающими механизмами для плавного выравнивания грунта и идеально подходят для уборки снега с дорог. Благодаря прочной конструкции и мощным двигателям, эти машины хорошо показывают себя при длительной эксплуатации.</p>
                             </div>
-                            <div className='w-[40%] min-h-[90%]'>
+                            <div className='w-[40%] min-h-[90%] tablet1:w-[100%] tablet1:mt-[10px]'>
                                 <img className='w-[100%]' src={user1Img1} alt="" />
                             </div>
                         </div>
@@ -240,7 +248,7 @@ function User4() {
                             </div> */}
                             {arr.map((elem) => {
                                 return (
-                                    <div className='w-[32%] bg-[#FFF] mt-[20px]'>
+                                    <div className='w-[32%] bg-[#FFF] mt-[20px] tablet1:w-[100%]'>
                                         <img className='p-[10px] w-[100%] h-[30vh]' src={elem.img} alt="" />
                                         <div className='p-[15px]'>
                                             <h1 className='hover:text-[#FCB027] opacity-[0.8] font-[600] text-start py-[10px] text-[20px]'>{elem.name}</h1>

@@ -11,6 +11,7 @@ import Uslugi from './components/Uslug/Uslugi'
 import Catalog from './components/Сatalog/MainCatalog/Catalog'
 import User from './components/User/User'
 import Erorr from './components/Erorr/Erorr'
+import Practic from './components/Practic/Practic'
 
 function App() {
   return (

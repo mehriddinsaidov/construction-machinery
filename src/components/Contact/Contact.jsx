@@ -1,4 +1,4 @@
-import { Button, TextField } from '@mui/material'
+import { Button, TextareaAutosize, TextField } from '@mui/material'
 import { Container } from '@mui/system'
 import React, { useEffect } from 'react'
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -49,7 +49,7 @@ function Contact() {
                                     <TextField label='Введите телефон' color="warning" className='w-[48%]' />
                                     <TextField type='email' label='Введите почту' color="warning" className='w-[48%]' />
                                 </div>
-                                <TextField label='Введите коментарий' color="warning" fullWidth />
+                                <TextareaAutosize placeholder='Введите комментарий' style={{ width:'100%',height:'8vh',border:'1px solid lightgrey',borderRadius:'5px',fontSize:'16px',padding:'12px 0 0 10px'}} />
                                 <Button fullWidth color="warning" variant='contained' style={{ padding: '10px 0', marginTop: '30px' }}>Отправить</Button>
                             </div>
                         </div>
