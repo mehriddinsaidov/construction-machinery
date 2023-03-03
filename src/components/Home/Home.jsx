@@ -96,7 +96,7 @@ function Home() {
                             рост при обеспечении безопасности и экологичности</p>
                     </div>
                     <div className='w-[48%] tablet1:w-[100%] tablet1:mt-[30px]'>
-                        <img src={buldozer} alt="" />
+                        <img src={buldozer} alt="buldozer" />
                     </div>
 
                 </div>

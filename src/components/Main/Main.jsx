@@ -76,7 +76,7 @@ function Main() {
 
                                 <div className='flex justify-between w-[60%] items-center'>
                                     <div className='hidden tablet1:block w-[25%]'>
-                                        <Practic />
+                                        <Practic className='w-[100%]' />
                                     </div>
 
                                     <div className='tablet1:w-[65%]'>

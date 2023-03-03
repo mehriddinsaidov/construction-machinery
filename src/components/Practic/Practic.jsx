@@ -6,18 +6,7 @@ import { Dropdown, Space } from 'antd';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Menu } from '@mui/material';
-
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-};
+import ClearIcon from '@mui/icons-material/Clear';
 
 export default function TemporaryDrawer() {
     const items = [
@@ -28,9 +17,6 @@ export default function TemporaryDrawer() {
             ),
         },
     ];
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
 
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open2 = Boolean(anchorEl);
@@ -63,13 +49,16 @@ export default function TemporaryDrawer() {
                         open={state[anchor]}
                         onClose={toggleDrawer(anchor, false)}
                     >
-                        <ul className='flex flex-col justify-around w-[75%] items-center'>
+                        <h1>hello</h1>
+                        <ul className='flex flex-col p-[10px] w-[100%]'>
+
+                            <Button onClick={toggleDrawer(anchor, false)}><ClearIcon style={{ color: '#000', fontSize: '30px'}} /></Button>
 
                             <Link id="basic-button"
                                 aria-controls={open2 ? 'basic-menu' : undefined}
                                 aria-haspopup="true"
                                 aria-expanded={open2 ? 'true' : undefined}
-                                onClick={handleClick} className='border border-solid py-[7px] px-[15px] hover:text-[#FCB027]'><b><MenuIcon /> Каталог</b>
+                                onClick={handleClick} className='border border-solid hover:text-[#FCB027] flex p-[10px]'><b className='mr-[160px]'>Каталог </b><MenuIcon />
                             </Link>
                             <div className='tablet1:w-[20%]'>
                                 <Menu
@@ -93,9 +82,9 @@ export default function TemporaryDrawer() {
                                 </Menu>
                             </div>
 
-                            <Link to='/about' className='tablet1:w-[20%] hover:text-[#FCB027]'><b>О компании</b></Link>
-                            <Link to='/Доставка' className='tablet1:w-[20%] hover:text-[#FCB027]'><b>Доставка</b></Link>
-                            <Link to='/Лизинг' className='tablet1:w-[20%] hover:text-[#FCB027]'><b>Лизинг</b></Link>
+                            <Link to='/about' className='tablet1:w-[100%] hover:text-[#FCB027]'><b>О компании</b></Link>
+                            <Link to='/Доставка' className='tablet1:w-[100%] hover:text-[#FCB027]'><b>Доставка</b></Link>
+                            <Link to='/Лизинг' className='tablet1:w-[100%] hover:text-[#FCB027]'><b>Лизинг</b></Link>
 
                             {/* uslugi */}
                             <Dropdown
