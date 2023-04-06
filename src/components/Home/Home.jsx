@@ -67,7 +67,7 @@ function Home() {
 
     return (
         <div className='bg-[#f4f4f4]'>
-            <video autoPlay muted loop className='min-w-[100%] table1:min-w-[100%] object-cover absolute h-[70vh]' >
+            <video autoPlay muted loop className='min-w-[100%] table1:min-w-[100%] tablet1:h-[90vh] tablet1:mt-[-11vh]  object-cover absolute h-[70vh]' >
                 <source src={video} type="video/mp4" />
             </video>
 
@@ -75,10 +75,23 @@ function Home() {
 
             </div>
             <Container>
-                <div className='mt-[10vh] text-[#FFF] w-[50%] tablet1:w-[90%] h-[40vh] absolute text-start flex flex-col justify-evenly'>
+                <div className='mt-[10vh] text-[#FFF] w-[50%] tablet1:w-[90%] tablet1:items-center h-[40vh] absolute text-start flex flex-col justify-evenly'>
                     <p className='tablet1:text-[14px] text-start'><b>ПРОИЗВОДСТВО ТЯЖЕЛОЙ ТЕХНИКИ С 1952 ГОДА</b></p>
                     <h1 className='text-[50px] tablet1:text-[30px] font-[700] py-[20px]'>Сделаем строительство проще</h1>
-                    <Link to='/Catalog' ><Button variant='contained' color="warning" style={{ width: '30%', padding: '15px 0' }}>Смотреть каталог</Button></Link>
+                    <Link to='/Catalog'>
+                        <Button variant='contained' color='warning'
+                            sx={{
+                                width: {
+                                    xs: "100%",
+                                    sm: "30%"
+                                },
+                                padding:{
+                                    xs: "15px",
+                                    sm: "15px 0"
+                                }
+                            }}
+                            >Смотреть каталог</Button>
+                    </Link>
                 </div>
 
                 <div className='h-[70vh]'>
@@ -103,10 +116,10 @@ function Home() {
 
                 <div>
                     <h1 className='text-start text-[36px] font-[700]'>Строительная техника SHANTUI</h1>
-                    <div className='flex justify-between pb-[70px] flex-wrap'>
+                    <div className='flex pb-[70px] flex-wrap gap-[20px]'>
                         {arr.map((elem) => {
                             return (
-                                <div id="div" className='w-[24%] tablet1:w-[100%] flex flex-col my-[20px] justify-between bg-[#FFF]'>
+                                <div id="div" className='w-[23%] tablet1:w-[100%] flex flex-col justify-between bg-[#FFF]'>
                                     <Link to={elem.link}>
                                         <div className='py-[20px]'>
                                             <h1 id="h1" className='text-[20px] font-[400]'>{elem.name}</h1>

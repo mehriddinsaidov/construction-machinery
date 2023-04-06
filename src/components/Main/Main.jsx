@@ -84,7 +84,7 @@ function Main() {
                                     </div>
                                 </div>
                                 <ul className='tablet1:hidden flex justify-around w-[75%] items-center'>
-
+                                    
                                     <Link id="basic-button"
                                         aria-controls={open2 ? 'basic-menu' : undefined}
                                         aria-haspopup="true"
@@ -99,8 +99,8 @@ function Main() {
                                             onClose={handleClose2}
                                             MenuListProps={{
                                                 'aria-labelledby': 'basic-button',
-                                            }}
-                                        >
+                                            }}>
+                                                
                                             <div className='m-[6px]'>
                                                 <Link onClick={handleClose2} to='/user/1'><p className='hover:bg-[#f4f4f4] m-[5px] p-[15px] flex justify-between'><b>Автогрейдеры</b> <p className='opacity-[0.6]'>6</p></p></Link>
                                                 <Link onClick={handleClose2} to='/user/2'><p className='hover:bg-[#f4f4f4] m-[5px] p-[15px] flex justify-between'><b>Бульдозеры</b> <p className='opacity-[0.6]'>78</p></p></Link>
@@ -210,7 +210,7 @@ function Main() {
                                                     <TextField type='email' label='Введите почту' color="warning" className='w-[48%] tablet1:w-[100%]' />
                                                 </div>
                                                 <TextareaAutosize placeholder='Введите комментарий' style={{ width: '100%', height: '8vh', border: '1px solid lightgrey', borderRadius: '5px', fontSize: '16px', padding: '12px 0 0 10px' }} />
-                                                <Button fullWidth color="warning" variant='contained' style={{ padding: '10px 0', marginTop: '30px' }}>Отправить</Button>
+                                                <Button onClick={handleClose} fullWidth color="warning" variant='contained' style={{ padding: '10px 0', marginTop: '30px' }}>Отправить</Button>
                                             </div>
                                         </div>
                                     </div>

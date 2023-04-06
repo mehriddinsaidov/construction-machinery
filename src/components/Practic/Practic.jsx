@@ -39,6 +39,28 @@ export default function TemporaryDrawer() {
         setState({ ...state, [anchor]: open });
     };
 
+
+    const [anchorEl1, setAnchorEl1] = React.useState(null);
+    const open21 = Boolean(anchorEl1);
+    const handleClick1 = (event1) => {
+        setAnchorEl1(event1.currentTarget);
+    };
+    const handleClose21 = () => {
+        setAnchorEl1(null);
+    };
+
+    const [state1, setState1] = React.useState({
+        left1: false,
+    });
+
+    const toggleDrawer1 = (anchor1, open1) => (event) => {
+        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+            return;
+        }
+
+        setState1({ ...state1, [anchor1]: open1 });
+    };
+
     return (
         <div>
             {['left'].map((anchor) => (
@@ -47,20 +69,52 @@ export default function TemporaryDrawer() {
                     <Drawer
                         anchor={anchor}
                         open={state[anchor]}
-                        onClose={toggleDrawer(anchor, false)}
-                    >
-                        <h1>hello</h1>
-                        <ul className='flex flex-col p-[10px] w-[100%]'>
+                        onClose={toggleDrawer(anchor, false)}>
 
-                            <Button onClick={toggleDrawer(anchor, false)}><ClearIcon style={{ color: '#000', fontSize: '30px'}} /></Button>
+                        <ul className='p-[10px] w-[100%]'>
+
+                            <Button onClick={toggleDrawer(anchor, false)} style={{ width: '100%' }}>
+                                <ClearIcon style={{ color: '#000', fontSize: '30px', marginLeft: '80%' }} />
+                            </Button>
 
                             <Link id="basic-button"
                                 aria-controls={open2 ? 'basic-menu' : undefined}
                                 aria-haspopup="true"
                                 aria-expanded={open2 ? 'true' : undefined}
-                                onClick={handleClick} className='border border-solid hover:text-[#FCB027] flex p-[10px]'><b className='mr-[160px]'>Каталог </b><MenuIcon />
+                                onClick={handleClick}
+                                className='border border-solid hover:text-[#FCB027] flex justify-between items-center'>
+                                <b className='pl-[10px]'>Каталог </b>
+
+
+                                {['left1'].map((anchor1) => (
+                                    <React.Fragment key={anchor1}>
+                                        <Button onClick={toggleDrawer1(anchor1, true)}><MenuIcon style={{ color: '#000', fontSize: '30px', width: '100%' }} /></Button>
+                                        <Drawer
+                                            anchor={anchor1}
+                                            open={state1[anchor1]}
+                                            onClose={toggleDrawer1(anchor1, false)}>
+
+                                            <ul className='flex flex-col p-[10px] w-[100%]'>
+
+                                                <Button onClick={toggleDrawer1(anchor1, false)} style={{ marginLeft: '80%' }} >
+                                                    <ClearIcon style={{ color: '#000', fontSize: '30px', }} />
+                                                </Button>
+
+                                                <Link onClick={handleClose21} to='/user/1'><p className='hover:bg-[#f4f4f4] m-[5px] p-[15px] flex justify-between'><b>Автогрейдеры</b> <p className='opacity-[0.6]'>6</p></p></Link>
+                                                <Link onClick={handleClose21} to='/user/2'><p className='hover:bg-[#f4f4f4] m-[5px] p-[15px] flex justify-between'><b>Бульдозеры</b> <p className='opacity-[0.6]'>78</p></p></Link>
+                                                <Link onClick={handleClose21} to='/user/3'><p className='hover:bg-[#f4f4f4] m-[5px] p-[15px] flex justify-between'><b>Экскаваторы</b> <p className='opacity-[0.6]'>13</p></p></Link>
+                                                <Link onClick={handleClose21} to='/user/4'><p className='hover:bg-[#f4f4f4] m-[5px] p-[15px] flex justify-between'><b>Компакторы</b> <p className='opacity-[0.6]'>3</p></p></Link>
+                                                <Link onClick={handleClose21} to='/user/5'><p className='hover:bg-[#f4f4f4] m-[5px] p-[15px] flex justify-between'><b>Трубоукладчики</b> <p className='opacity-[0.6]'>4</p></p></Link>
+                                                <Link onClick={handleClose21} to='/user/6'><p className='hover:bg-[#f4f4f4] m-[5px] p-[15px] flex justify-between'><b>Дорожные катки</b> <p className='opacity-[0.6]'>45</p></p></Link>
+                                                <Link onClick={handleClose21} to='/user/7'><p className='hover:bg-[#f4f4f4] m-[5px] p-[15px] flex justify-between'><b className='pr-[15px]'>Фронтальные погрузчики</b> <p className='opacity-[0.6]'>28</p></p></Link>
+                                            </ul>
+                                        </Drawer>
+                                    </React.Fragment>
+                                ))}
+
+
                             </Link>
-                            <div className='tablet1:w-[20%]'>
+                            {/* <div className='tablet1:w-[20%]'>
                                 <Menu
                                     id="basic-menu"
                                     anchorEl={anchorEl}
@@ -70,7 +124,7 @@ export default function TemporaryDrawer() {
                                         'aria-labelledby': 'basic-button',
                                     }}
                                 >
-                                    <div className='m-[6px]'>
+                                    <div className='m-[6px] '>
                                         <Link onClick={handleClose2} to='/user/1'><p className='hover:bg-[#f4f4f4] m-[5px] p-[15px] flex justify-between'><b>Автогрейдеры</b> <p className='opacity-[0.6]'>6</p></p></Link>
                                         <Link onClick={handleClose2} to='/user/2'><p className='hover:bg-[#f4f4f4] m-[5px] p-[15px] flex justify-between'><b>Бульдозеры</b> <p className='opacity-[0.6]'>78</p></p></Link>
                                         <Link onClick={handleClose2} to='/user/3'><p className='hover:bg-[#f4f4f4] m-[5px] p-[15px] flex justify-between'><b>Экскаваторы</b> <p className='opacity-[0.6]'>13</p></p></Link>
@@ -80,11 +134,13 @@ export default function TemporaryDrawer() {
                                         <Link onClick={handleClose2} to='/user/7'><p className='hover:bg-[#f4f4f4] m-[5px] p-[15px] flex justify-between'><b className='pr-[15px]'>Фронтальные погрузчики</b> <p className='opacity-[0.6]'>28</p></p></Link>
                                     </div>
                                 </Menu>
-                            </div>
+                            </div> */}
 
-                            <Link to='/about' className='tablet1:w-[100%] hover:text-[#FCB027]'><b>О компании</b></Link>
-                            <Link to='/Доставка' className='tablet1:w-[100%] hover:text-[#FCB027]'><b>Доставка</b></Link>
-                            <Link to='/Лизинг' className='tablet1:w-[100%] hover:text-[#FCB027]'><b>Лизинг</b></Link>
+                            <div className='flex flex-wrap w-[100%] pl-[10px]'>
+                                <Link to='/about' className='w-[100%] py-[10px] hover:text-[#FCB027]'><b>О компании</b></Link>
+                                <Link to='/Доставка' className='w-[100%] py-[10px] hover:text-[#FCB027]'><b>Доставка</b></Link>
+                                <Link to='/Лизинг' className='w-[100%] py-[10px] hover:text-[#FCB027]'><b>Лизинг</b></Link>
+                            </div>
 
                             {/* uslugi */}
                             <Dropdown
@@ -93,7 +149,7 @@ export default function TemporaryDrawer() {
                                 }}>
                                 <a onClick={(e) => e.preventDefault()}>
                                     <Space>
-                                        <Link className='tablet1:w-[20%] hover:text-[#FCB027]'>
+                                        <Link className='tablet1:w-[40%] tablet1:text-[16px] hover:text-[#FCB027] pl-[10px]'>
                                             <b>Услуги</b>
                                             <KeyboardArrowDownIcon />
                                         </Link>
@@ -104,6 +160,8 @@ export default function TemporaryDrawer() {
                     </Drawer>
                 </React.Fragment>
             ))}
+
+
         </div>
     );
 }
